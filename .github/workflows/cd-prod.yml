@@ -1,9 +1,9 @@
-name: CD Dev
+name: CD Prod
 
 on:
   push:
     branches:
-      - "develop"
+      - "main"
 
 jobs:
   build-and-push-image:
@@ -33,7 +33,7 @@ jobs:
 
   deploy:
     needs: build-and-push-image
-    runs-on: dev-self-hosted
+    runs-on: prod-self-hosted
 
     steps:
       - name: change permission
@@ -46,7 +46,7 @@ jobs:
       - name: Create .env file from Secrets
         run: |
           echo "Creating .env file from GitHub Secrets"
-          echo "${{ secrets.DEV_ENV }}" | base64 --decode > .env
+          echo "${{ secrets.PROD_ENV }}" | base64 --decode > .env
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
@@ -56,5 +56,5 @@ jobs:
 
       - name: Pull latest image and deploy
         run: |
-          sudo docker compose -f compose.dev.yaml up -d
+          sudo docker compose -f compose.app.yaml up -d
           sudo docker image prune -af
