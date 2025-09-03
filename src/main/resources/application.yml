@@ -3,7 +3,7 @@ spring:
     name: lv2-final-mission
 
   profiles:
-    include: secret
+    default: local
 
   jpa:
     database: mysql
