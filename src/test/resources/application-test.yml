@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: lv2-final-mission
+
+  datasource:
+    url: jdbc:h2:mem:database
+
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: create
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: trace
+
+randommer:
+  secret-key: ${RANDOMMER_SECRET_KEY}

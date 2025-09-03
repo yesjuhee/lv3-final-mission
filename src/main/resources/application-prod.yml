@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL_PROD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${SPRING_DATASOURCE_USERNAME_PROD}
+    password: ${SPRING_DATASOURCE_PASSWORD_PROD}
+
+randommer:
+  secret-key: ${RANDOMMER_SECRET_KEY}

@@ -1,0 +1,12 @@
+services:
+  app:
+    image: yesjuhee/lv3-final:latest
+    container_name: app
+    ports:
+      - "80:8080" # TOOD 추후 수정
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DATASOURCE_URL_PROD: ${SPRING_DATASOURCE_URL_PROD}
+      SPRING_DATASOURCE_USERNAME_PROD: ${SPRING_DATASOURCE_USERNAME_PROD}
+      SPRING_DATASOURCE_PASSWORD_PROD: ${SPRING_DATASOURCE_PASSWORD_PROD}
+      RANDOMMER_SECRET_KEY: ${RANDOMMER_SECRET_KEY}
