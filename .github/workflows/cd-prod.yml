@@ -33,7 +33,7 @@ jobs:
 
   deploy:
     needs: build-and-push-image
-    runs-on: prod-self-hosted
+    runs-on: self-hosted-prod
 
     steps:
       - name: change permission
