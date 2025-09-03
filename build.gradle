@@ -75,7 +75,6 @@ tasks.named('asciidoctor', AsciidoctorTask) {
 }
 
 bootJar {
-    dependsOn asciidoctor
     from('${asciidoctor.outputDir}') {
         into 'static/docs'
     }
