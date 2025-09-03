@@ -37,4 +37,5 @@ out/
 .vscode/
 
 ### Secrets ###
-src/main/resources/application-secret.yml
+src/main/resources/application-local.yml
+src/test/resources/application-test-local.yml
